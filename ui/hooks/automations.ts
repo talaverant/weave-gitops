@@ -7,7 +7,7 @@ import {
   ListHelmReleasesResponse,
   ListKustomizationsResponse,
 } from "../lib/api/core/core.pb";
-import { Kustomization } from "../lib/api/core/types.pb";
+import { HelmRelease, Kustomization } from "../lib/api/core/types.pb";
 import { AutomationType, RequestError, WeGONamespace } from "../lib/types";
 
 export type Automation = Kustomization & { type: AutomationType };
@@ -18,7 +18,7 @@ export function useListAutomations(namespace = WeGONamespace) {
   return useQuery<Automation[], RequestError>(
     "automations",
     () => {
-      const p = [
+      const p: Promise<{ [key: string]: Kustomization[] | HelmRelease[] }>[] = [
         api.ListKustomizations({ namespace }),
         api.ListHelmReleases({ namespace }),
       ];

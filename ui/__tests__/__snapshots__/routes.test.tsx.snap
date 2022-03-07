@@ -1,0 +1,1256 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`routes /helm_chart renders 1`] = `
+<div
+  className="sc-kfPuZi cUEZAs"
+>
+  <div
+    className="sc-fFeiMQ jkgIzc"
+  >
+    <div
+      className="sc-bdvvtL sc-dlVxhl ivhyap gGsMZS"
+    >
+      <div
+        className="sc-eCImPb kPEjpo"
+      >
+        <div
+          className="sc-bdvvtL lacWsj sc-egiyK"
+        >
+          <img
+            src=""
+          />
+          <div
+            className="sc-eCImPb EfeXe"
+          />
+          <img
+            src=""
+            style={
+              Object {
+                "height": "90%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="sc-eCImPb gBANzQ"
+      />
+      <div
+        className="sc-bdvvtL lacWsj"
+      >
+        <a
+          className="sc-kDTinF sc-iqseJM sdivb iFSMhT"
+          href="/applications"
+          onClick={[Function]}
+        >
+          <span
+            className="sc-pVTFL jaxbZ"
+            color="primary"
+            size="normal"
+          >
+            Applications
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      className="sc-bdvvtL sc-hGPBjI EOLJg WJpqk"
+    >
+      <div
+        className="sc-bkkeKt gOwFdJ"
+      >
+        <div
+          className="sc-ieecCq iQOUKR"
+        >
+          <div
+            className="MuiTabs-root-258 MuiTabs-vertical-259"
+          >
+            <div
+              className="MuiTabs-scroller-263 MuiTabs-fixed-264"
+              onScroll={[Function]}
+              style={
+                Object {
+                  "marginBottom": null,
+                  "overflow": "hidden",
+                }
+              }
+            >
+              <div
+                className="MuiTabs-flexContainer-260 MuiTabs-flexContainerVertical-261"
+                onKeyDown={[Function]}
+                role="tablist"
+              >
+                <a
+                  aria-disabled={false}
+                  aria-selected={true}
+                  className="sc-kDTinF sdivb MuiButtonBase-root-277 MuiTab-root-269 MuiTab-textColorInherit-271 sc-fotOHu fbLnNP Mui-selected"
+                  href="/applications"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  role="tab"
+                  tabIndex={0}
+                >
+                  <span
+                    className="sc-pVTFL goUhWR"
+                    color="primary"
+                    size="normal"
+                  >
+                    <span
+                      className="MuiTab-wrapper-276"
+                    >
+                      Applications
+                    </span>
+                    <span
+                      className="PrivateTabIndicator-root-278 PrivateTabIndicator-colorSecondary-280 MuiTabs-indicator-268 PrivateTabIndicator-vertical-281"
+                      style={Object {}}
+                    />
+                  </span>
+                </a>
+                <a
+                  aria-disabled={false}
+                  aria-selected={false}
+                  className="sc-kDTinF sdivb MuiButtonBase-root-277 MuiTab-root-269 MuiTab-textColorInherit-271 sc-fotOHu fbLnNP sub-item"
+                  href="/sources"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  role="tab"
+                  tabIndex={-1}
+                >
+                  <span
+                    className="sc-pVTFL goUhWR"
+                    color="primary"
+                    size="normal"
+                  >
+                    <span
+                      className="MuiTab-wrapper-276"
+                    >
+                      Sources
+                    </span>
+                  </span>
+                </a>
+                <a
+                  aria-disabled={false}
+                  aria-selected={false}
+                  className="sc-kDTinF sdivb MuiButtonBase-root-277 MuiTab-root-269 MuiTab-textColorInherit-271 sc-fotOHu fbLnNP"
+                  href="/flux_runtime"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  role="tab"
+                  tabIndex={-1}
+                >
+                  <span
+                    className="sc-pVTFL goUhWR"
+                    color="primary"
+                    size="normal"
+                  >
+                    <span
+                      className="MuiTab-wrapper-276"
+                    >
+                      Flux Runtime
+                    </span>
+                  </span>
+                </a>
+                <a
+                  className="sc-kDTinF sdivb MuiButtonBase-root-277 MuiTab-root-269 MuiTab-textColorInherit-271 sc-fotOHu fbLnNP"
+                  href="https://docs.gitops.weave.works/"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <span
+                    className="sc-pVTFL goUhWR"
+                    color="primary"
+                    size="normal"
+                  >
+                    <span
+                      className="MuiTab-wrapper-276"
+                    >
+                      Docs
+                    </span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-dJjYzT ifEamg"
+      >
+        <div
+          className="sc-jRQBWg fXJQJr"
+        >
+          <div>
+            <div
+              className="sc-bdvvtL dIFbEA sc-hKwDye"
+            >
+              <div
+                className="MuiCircularProgress-root-282 MuiCircularProgress-colorPrimary-286 MuiCircularProgress-indeterminate-284"
+                role="progressbar"
+                style={
+                  Object {
+                    "color": "#00b3ec",
+                    "height": 40,
+                    "width": 40,
+                  }
+                }
+              >
+                <svg
+                  className="MuiCircularProgress-svg-288"
+                  viewBox="22 22 44 44"
+                >
+                  <circle
+                    className="MuiCircularProgress-circle-289 MuiCircularProgress-circleIndeterminate-291"
+                    cx={44}
+                    cy={44}
+                    fill="none"
+                    r={20.2}
+                    strokeWidth={3.6}
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="Toastify"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`routes /helm_repo renders 1`] = `
+<div
+  className="sc-kfPuZi cUEZAs"
+>
+  <div
+    className="sc-fFeiMQ jkgIzc"
+  >
+    <div
+      className="sc-bdvvtL sc-dlVxhl ivhyap gGsMZS"
+    >
+      <div
+        className="sc-eCImPb kPEjpo"
+      >
+        <div
+          className="sc-bdvvtL lacWsj sc-egiyK"
+        >
+          <img
+            src=""
+          />
+          <div
+            className="sc-eCImPb EfeXe"
+          />
+          <img
+            src=""
+            style={
+              Object {
+                "height": "90%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="sc-eCImPb gBANzQ"
+      />
+      <div
+        className="sc-bdvvtL lacWsj"
+      >
+        <a
+          className="sc-kDTinF sc-iqseJM sdivb iFSMhT"
+          href="/applications"
+          onClick={[Function]}
+        >
+          <span
+            className="sc-pVTFL jaxbZ"
+            color="primary"
+            size="normal"
+          >
+            Applications
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      className="sc-bdvvtL sc-hGPBjI EOLJg WJpqk"
+    >
+      <div
+        className="sc-bkkeKt gOwFdJ"
+      >
+        <div
+          className="sc-ieecCq iQOUKR"
+        >
+          <div
+            className="MuiTabs-root-182 MuiTabs-vertical-183"
+          >
+            <div
+              className="MuiTabs-scroller-187 MuiTabs-fixed-188"
+              onScroll={[Function]}
+              style={
+                Object {
+                  "marginBottom": null,
+                  "overflow": "hidden",
+                }
+              }
+            >
+              <div
+                className="MuiTabs-flexContainer-184 MuiTabs-flexContainerVertical-185"
+                onKeyDown={[Function]}
+                role="tablist"
+              >
+                <a
+                  aria-disabled={false}
+                  aria-selected={true}
+                  className="sc-kDTinF sdivb MuiButtonBase-root-201 MuiTab-root-193 MuiTab-textColorInherit-195 sc-fotOHu fbLnNP Mui-selected"
+                  href="/applications"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  role="tab"
+                  tabIndex={0}
+                >
+                  <span
+                    className="sc-pVTFL goUhWR"
+                    color="primary"
+                    size="normal"
+                  >
+                    <span
+                      className="MuiTab-wrapper-200"
+                    >
+                      Applications
+                    </span>
+                    <span
+                      className="PrivateTabIndicator-root-202 PrivateTabIndicator-colorSecondary-204 MuiTabs-indicator-192 PrivateTabIndicator-vertical-205"
+                      style={Object {}}
+                    />
+                  </span>
+                </a>
+                <a
+                  aria-disabled={false}
+                  aria-selected={false}
+                  className="sc-kDTinF sdivb MuiButtonBase-root-201 MuiTab-root-193 MuiTab-textColorInherit-195 sc-fotOHu fbLnNP sub-item"
+                  href="/sources"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  role="tab"
+                  tabIndex={-1}
+                >
+                  <span
+                    className="sc-pVTFL goUhWR"
+                    color="primary"
+                    size="normal"
+                  >
+                    <span
+                      className="MuiTab-wrapper-200"
+                    >
+                      Sources
+                    </span>
+                  </span>
+                </a>
+                <a
+                  aria-disabled={false}
+                  aria-selected={false}
+                  className="sc-kDTinF sdivb MuiButtonBase-root-201 MuiTab-root-193 MuiTab-textColorInherit-195 sc-fotOHu fbLnNP"
+                  href="/flux_runtime"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  role="tab"
+                  tabIndex={-1}
+                >
+                  <span
+                    className="sc-pVTFL goUhWR"
+                    color="primary"
+                    size="normal"
+                  >
+                    <span
+                      className="MuiTab-wrapper-200"
+                    >
+                      Flux Runtime
+                    </span>
+                  </span>
+                </a>
+                <a
+                  className="sc-kDTinF sdivb MuiButtonBase-root-201 MuiTab-root-193 MuiTab-textColorInherit-195 sc-fotOHu fbLnNP"
+                  href="https://docs.gitops.weave.works/"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <span
+                    className="sc-pVTFL goUhWR"
+                    color="primary"
+                    size="normal"
+                  >
+                    <span
+                      className="MuiTab-wrapper-200"
+                    >
+                      Docs
+                    </span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-dJjYzT ifEamg"
+      >
+        <div
+          className="sc-jRQBWg fXJQJr"
+        >
+          <div>
+            <div
+              className="sc-bdvvtL dIFbEA sc-hKwDye"
+            >
+              <div
+                className="MuiCircularProgress-root-206 MuiCircularProgress-colorPrimary-210 MuiCircularProgress-indeterminate-208"
+                role="progressbar"
+                style={
+                  Object {
+                    "color": "#00b3ec",
+                    "height": 40,
+                    "width": 40,
+                  }
+                }
+              >
+                <svg
+                  className="MuiCircularProgress-svg-212"
+                  viewBox="22 22 44 44"
+                >
+                  <circle
+                    className="MuiCircularProgress-circle-213 MuiCircularProgress-circleIndeterminate-215"
+                    cx={44}
+                    cy={44}
+                    fill="none"
+                    r={20.2}
+                    strokeWidth={3.6}
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="Toastify"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`routes /kustomization renders 1`] = `
+<div
+  className="sc-kfPuZi cUEZAs"
+>
+  <div
+    className="sc-fFeiMQ jkgIzc"
+  >
+    <div
+      className="sc-bdvvtL sc-dlVxhl ivhyap gGsMZS"
+    >
+      <div
+        className="sc-eCImPb kPEjpo"
+      >
+        <div
+          className="sc-bdvvtL lacWsj sc-egiyK"
+        >
+          <img
+            src=""
+          />
+          <div
+            className="sc-eCImPb EfeXe"
+          />
+          <img
+            src=""
+            style={
+              Object {
+                "height": "90%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="sc-eCImPb gBANzQ"
+      />
+      <div
+        className="sc-bdvvtL lacWsj"
+      >
+        <a
+          className="sc-kDTinF sc-iqseJM sdivb iFSMhT"
+          href="/applications"
+          onClick={[Function]}
+        >
+          <span
+            className="sc-pVTFL jaxbZ"
+            color="primary"
+            size="normal"
+          >
+            Applications
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      className="sc-bdvvtL sc-hGPBjI EOLJg WJpqk"
+    >
+      <div
+        className="sc-bkkeKt gOwFdJ"
+      >
+        <div
+          className="sc-ieecCq iQOUKR"
+        >
+          <div
+            className="MuiTabs-root-106 MuiTabs-vertical-107"
+          >
+            <div
+              className="MuiTabs-scroller-111 MuiTabs-fixed-112"
+              onScroll={[Function]}
+              style={
+                Object {
+                  "marginBottom": null,
+                  "overflow": "hidden",
+                }
+              }
+            >
+              <div
+                className="MuiTabs-flexContainer-108 MuiTabs-flexContainerVertical-109"
+                onKeyDown={[Function]}
+                role="tablist"
+              >
+                <a
+                  aria-disabled={false}
+                  aria-selected={true}
+                  className="sc-kDTinF sdivb MuiButtonBase-root-125 MuiTab-root-117 MuiTab-textColorInherit-119 sc-fotOHu fbLnNP Mui-selected"
+                  href="/applications"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  role="tab"
+                  tabIndex={0}
+                >
+                  <span
+                    className="sc-pVTFL goUhWR"
+                    color="primary"
+                    size="normal"
+                  >
+                    <span
+                      className="MuiTab-wrapper-124"
+                    >
+                      Applications
+                    </span>
+                    <span
+                      className="PrivateTabIndicator-root-126 PrivateTabIndicator-colorSecondary-128 MuiTabs-indicator-116 PrivateTabIndicator-vertical-129"
+                      style={Object {}}
+                    />
+                  </span>
+                </a>
+                <a
+                  aria-disabled={false}
+                  aria-selected={false}
+                  className="sc-kDTinF sdivb MuiButtonBase-root-125 MuiTab-root-117 MuiTab-textColorInherit-119 sc-fotOHu fbLnNP sub-item"
+                  href="/sources"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  role="tab"
+                  tabIndex={-1}
+                >
+                  <span
+                    className="sc-pVTFL goUhWR"
+                    color="primary"
+                    size="normal"
+                  >
+                    <span
+                      className="MuiTab-wrapper-124"
+                    >
+                      Sources
+                    </span>
+                  </span>
+                </a>
+                <a
+                  aria-disabled={false}
+                  aria-selected={false}
+                  className="sc-kDTinF sdivb MuiButtonBase-root-125 MuiTab-root-117 MuiTab-textColorInherit-119 sc-fotOHu fbLnNP"
+                  href="/flux_runtime"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  role="tab"
+                  tabIndex={-1}
+                >
+                  <span
+                    className="sc-pVTFL goUhWR"
+                    color="primary"
+                    size="normal"
+                  >
+                    <span
+                      className="MuiTab-wrapper-124"
+                    >
+                      Flux Runtime
+                    </span>
+                  </span>
+                </a>
+                <a
+                  className="sc-kDTinF sdivb MuiButtonBase-root-125 MuiTab-root-117 MuiTab-textColorInherit-119 sc-fotOHu fbLnNP"
+                  href="https://docs.gitops.weave.works/"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <span
+                    className="sc-pVTFL goUhWR"
+                    color="primary"
+                    size="normal"
+                  >
+                    <span
+                      className="MuiTab-wrapper-124"
+                    >
+                      Docs
+                    </span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-dJjYzT ifEamg"
+      >
+        <div
+          className="sc-jRQBWg fXJQJr"
+        >
+          <div>
+            <div
+              className="sc-bdvvtL dIFbEA sc-hKwDye"
+            >
+              <div
+                className="MuiCircularProgress-root-130 MuiCircularProgress-colorPrimary-134 MuiCircularProgress-indeterminate-132"
+                role="progressbar"
+                style={
+                  Object {
+                    "color": "#00b3ec",
+                    "height": 40,
+                    "width": 40,
+                  }
+                }
+              >
+                <svg
+                  className="MuiCircularProgress-svg-136"
+                  viewBox="22 22 44 44"
+                >
+                  <circle
+                    className="MuiCircularProgress-circle-137 MuiCircularProgress-circleIndeterminate-139"
+                    cx={44}
+                    cy={44}
+                    fill="none"
+                    r={20.2}
+                    strokeWidth={3.6}
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="Toastify"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`routes /not_implemented renders 1`] = `
+<div
+  className="sc-kfPuZi cUEZAs"
+>
+  <div
+    className="sc-fFeiMQ jkgIzc"
+  >
+    <div
+      className="sc-bdvvtL sc-dlVxhl ivhyap gGsMZS"
+    >
+      <div
+        className="sc-eCImPb kPEjpo"
+      >
+        <div
+          className="sc-bdvvtL lacWsj sc-egiyK"
+        >
+          <img
+            src=""
+          />
+          <div
+            className="sc-eCImPb EfeXe"
+          />
+          <img
+            src=""
+            style={
+              Object {
+                "height": "90%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="sc-eCImPb gBANzQ"
+      />
+      <div
+        className="sc-bdvvtL lacWsj"
+      >
+        <a
+          className="sc-kDTinF sc-iqseJM sdivb iFSMhT"
+          href="/applications"
+          onClick={[Function]}
+        >
+          <span
+            className="sc-pVTFL jaxbZ"
+            color="primary"
+            size="normal"
+          >
+            Applications
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      className="sc-bdvvtL sc-hGPBjI EOLJg WJpqk"
+    >
+      <div
+        className="sc-bkkeKt gOwFdJ"
+      >
+        <div
+          className="sc-ieecCq iQOUKR"
+        >
+          <div
+            className="MuiTabs-root-334 MuiTabs-vertical-335"
+          >
+            <div
+              className="MuiTabs-scroller-339 MuiTabs-fixed-340"
+              onScroll={[Function]}
+              style={
+                Object {
+                  "marginBottom": null,
+                  "overflow": "hidden",
+                }
+              }
+            >
+              <div
+                className="MuiTabs-flexContainer-336 MuiTabs-flexContainerVertical-337"
+                onKeyDown={[Function]}
+                role="tablist"
+              >
+                <a
+                  aria-disabled={false}
+                  aria-selected={true}
+                  className="sc-kDTinF sdivb MuiButtonBase-root-353 MuiTab-root-345 MuiTab-textColorInherit-347 sc-fotOHu fbLnNP Mui-selected"
+                  href="/applications"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  role="tab"
+                  tabIndex={0}
+                >
+                  <span
+                    className="sc-pVTFL goUhWR"
+                    color="primary"
+                    size="normal"
+                  >
+                    <span
+                      className="MuiTab-wrapper-352"
+                    >
+                      Applications
+                    </span>
+                    <span
+                      className="PrivateTabIndicator-root-354 PrivateTabIndicator-colorSecondary-356 MuiTabs-indicator-344 PrivateTabIndicator-vertical-357"
+                      style={Object {}}
+                    />
+                  </span>
+                </a>
+                <a
+                  aria-disabled={false}
+                  aria-selected={false}
+                  className="sc-kDTinF sdivb MuiButtonBase-root-353 MuiTab-root-345 MuiTab-textColorInherit-347 sc-fotOHu fbLnNP sub-item"
+                  href="/sources"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  role="tab"
+                  tabIndex={-1}
+                >
+                  <span
+                    className="sc-pVTFL goUhWR"
+                    color="primary"
+                    size="normal"
+                  >
+                    <span
+                      className="MuiTab-wrapper-352"
+                    >
+                      Sources
+                    </span>
+                  </span>
+                </a>
+                <a
+                  aria-disabled={false}
+                  aria-selected={false}
+                  className="sc-kDTinF sdivb MuiButtonBase-root-353 MuiTab-root-345 MuiTab-textColorInherit-347 sc-fotOHu fbLnNP"
+                  href="/flux_runtime"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  role="tab"
+                  tabIndex={-1}
+                >
+                  <span
+                    className="sc-pVTFL goUhWR"
+                    color="primary"
+                    size="normal"
+                  >
+                    <span
+                      className="MuiTab-wrapper-352"
+                    >
+                      Flux Runtime
+                    </span>
+                  </span>
+                </a>
+                <a
+                  className="sc-kDTinF sdivb MuiButtonBase-root-353 MuiTab-root-345 MuiTab-textColorInherit-347 sc-fotOHu fbLnNP"
+                  href="https://docs.gitops.weave.works/"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <span
+                    className="sc-pVTFL goUhWR"
+                    color="primary"
+                    size="normal"
+                  >
+                    <span
+                      className="MuiTab-wrapper-352"
+                    >
+                      Docs
+                    </span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-dJjYzT ifEamg"
+      >
+        <div
+          className="sc-jRQBWg fXJQJr"
+        >
+          <div>
+            <div
+              className="sc-bdvvtL dIFbEA sc-hKwDye"
+            >
+              <div
+                className="MuiCircularProgress-root-358 MuiCircularProgress-colorPrimary-362 MuiCircularProgress-indeterminate-360"
+                role="progressbar"
+                style={
+                  Object {
+                    "color": "#00b3ec",
+                    "height": 40,
+                    "width": 40,
+                  }
+                }
+              >
+                <svg
+                  className="MuiCircularProgress-svg-364"
+                  viewBox="22 22 44 44"
+                >
+                  <circle
+                    className="MuiCircularProgress-circle-365 MuiCircularProgress-circleIndeterminate-367"
+                    cx={44}
+                    cy={44}
+                    fill="none"
+                    r={20.2}
+                    strokeWidth={3.6}
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="Toastify"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`routes /sources renders 1`] = `
+<div
+  className="sc-kfPuZi cUEZAs"
+>
+  <div
+    className="sc-fFeiMQ jkgIzc"
+  >
+    <div
+      className="sc-bdvvtL sc-dlVxhl ivhyap gGsMZS"
+    >
+      <div
+        className="sc-eCImPb kPEjpo"
+      >
+        <div
+          className="sc-bdvvtL lacWsj sc-egiyK"
+        >
+          <img
+            src=""
+          />
+          <div
+            className="sc-eCImPb EfeXe"
+          />
+          <img
+            src=""
+            style={
+              Object {
+                "height": "90%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="sc-eCImPb gBANzQ"
+      />
+      <div
+        className="sc-bdvvtL lacWsj"
+      >
+        <a
+          className="sc-kDTinF sc-iqseJM sdivb iFSMhT"
+          href="/applications"
+          onClick={[Function]}
+        >
+          <span
+            className="sc-pVTFL jaxbZ"
+            color="primary"
+            size="normal"
+          >
+            Applications
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      className="sc-bdvvtL sc-hGPBjI EOLJg WJpqk"
+    >
+      <div
+        className="sc-bkkeKt gOwFdJ"
+      >
+        <div
+          className="sc-ieecCq iQOUKR"
+        >
+          <div
+            className="MuiTabs-root-30 MuiTabs-vertical-31"
+          >
+            <div
+              className="MuiTabs-scroller-35 MuiTabs-fixed-36"
+              onScroll={[Function]}
+              style={
+                Object {
+                  "marginBottom": null,
+                  "overflow": "hidden",
+                }
+              }
+            >
+              <div
+                className="MuiTabs-flexContainer-32 MuiTabs-flexContainerVertical-33"
+                onKeyDown={[Function]}
+                role="tablist"
+              >
+                <a
+                  aria-disabled={false}
+                  aria-selected={true}
+                  className="sc-kDTinF sdivb MuiButtonBase-root-49 MuiTab-root-41 MuiTab-textColorInherit-43 sc-fotOHu fbLnNP Mui-selected"
+                  href="/applications"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  role="tab"
+                  tabIndex={0}
+                >
+                  <span
+                    className="sc-pVTFL goUhWR"
+                    color="primary"
+                    size="normal"
+                  >
+                    <span
+                      className="MuiTab-wrapper-48"
+                    >
+                      Applications
+                    </span>
+                    <span
+                      className="PrivateTabIndicator-root-50 PrivateTabIndicator-colorSecondary-52 MuiTabs-indicator-40 PrivateTabIndicator-vertical-53"
+                      style={Object {}}
+                    />
+                  </span>
+                </a>
+                <a
+                  aria-disabled={false}
+                  aria-selected={false}
+                  className="sc-kDTinF sdivb MuiButtonBase-root-49 MuiTab-root-41 MuiTab-textColorInherit-43 sc-fotOHu fbLnNP sub-item"
+                  href="/sources"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  role="tab"
+                  tabIndex={-1}
+                >
+                  <span
+                    className="sc-pVTFL goUhWR"
+                    color="primary"
+                    size="normal"
+                  >
+                    <span
+                      className="MuiTab-wrapper-48"
+                    >
+                      Sources
+                    </span>
+                  </span>
+                </a>
+                <a
+                  aria-disabled={false}
+                  aria-selected={false}
+                  className="sc-kDTinF sdivb MuiButtonBase-root-49 MuiTab-root-41 MuiTab-textColorInherit-43 sc-fotOHu fbLnNP"
+                  href="/flux_runtime"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  role="tab"
+                  tabIndex={-1}
+                >
+                  <span
+                    className="sc-pVTFL goUhWR"
+                    color="primary"
+                    size="normal"
+                  >
+                    <span
+                      className="MuiTab-wrapper-48"
+                    >
+                      Flux Runtime
+                    </span>
+                  </span>
+                </a>
+                <a
+                  className="sc-kDTinF sdivb MuiButtonBase-root-49 MuiTab-root-41 MuiTab-textColorInherit-43 sc-fotOHu fbLnNP"
+                  href="https://docs.gitops.weave.works/"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <span
+                    className="sc-pVTFL goUhWR"
+                    color="primary"
+                    size="normal"
+                  >
+                    <span
+                      className="MuiTab-wrapper-48"
+                    >
+                      Docs
+                    </span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-dJjYzT ifEamg"
+      >
+        <div
+          className="sc-jRQBWg fXJQJr"
+        >
+          <div>
+            <div
+              className="sc-bdvvtL dIFbEA sc-hKwDye"
+            >
+              <div
+                className="MuiCircularProgress-root-54 MuiCircularProgress-colorPrimary-58 MuiCircularProgress-indeterminate-56"
+                role="progressbar"
+                style={
+                  Object {
+                    "color": "#00b3ec",
+                    "height": 40,
+                    "width": 40,
+                  }
+                }
+              >
+                <svg
+                  className="MuiCircularProgress-svg-60"
+                  viewBox="22 22 44 44"
+                >
+                  <circle
+                    className="MuiCircularProgress-circle-61 MuiCircularProgress-circleIndeterminate-63"
+                    cx={44}
+                    cy={44}
+                    fill="none"
+                    r={20.2}
+                    strokeWidth={3.6}
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="Toastify"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

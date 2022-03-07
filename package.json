@@ -75,7 +75,12 @@
     "modulePathIgnorePatterns": [
       "<rootDir>/dist/"
     ],
-    "testEnvironment": "jsdom"
+    "testEnvironment": "jsdom",
+    "globals": {
+      "ts-jest": {
+        "diagnostics": false
+      }
+    }
   },
   "resolutions": {
     "ejs": "^3.1.6",
