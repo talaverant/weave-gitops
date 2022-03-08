@@ -273,7 +273,7 @@ func runCmd(cmd *cobra.Command, args []string) error {
 	go func() {
 		log.Infof("Serving on %s", addr)
 
-		if err := ListenAndServe(srv, options.NoTLS, options.TLSCert, options.TLSKey, log); err != nil {
+		if err := tls.ListenAndServe(srv, options.NoTLS, options.TLSCert, options.TLSKey, log); err != nil {
 			log.Error(err, "server exited")
 			os.Exit(1)
 		}
@@ -310,35 +310,6 @@ func runCmd(cmd *cobra.Command, args []string) error {
 	}
 
 	return nil
-}
-
-func ListenAndServe(srv *http.Server, noTLS bool, tlsCert, tlsKey string, log logrus.FieldLogger) error {
-	if noTLS {
-		log.Info("TLS connections disabled")
-		return srv.ListenAndServe()
-	}
-
-	if tlsCert == "" && tlsKey == "" {
-		log.Info("TLS cert and key not specified, generating and using in-memory keys")
-
-		tlsConfig, err := tls.TLSConfig([]string{"localhost", "0.0.0.0", "127.0.0.1"})
-		if err != nil {
-			return fmt.Errorf("failed to generate a TLSConfig: %w", err)
-		}
-
-		srv.TLSConfig = tlsConfig
-		// if TLSCert and TLSKey are both empty (""), ListenAndServeTLS will ignore
-		// and happily use the TLSConfig supplied above
-		return srv.ListenAndServeTLS("", "")
-	}
-
-	if tlsCert == "" || tlsKey == "" {
-		return cmderrors.ErrNoTLSCertOrKey
-	}
-
-	log.Infof("Using TLS from %q and %q", tlsCert, tlsKey)
-
-	return srv.ListenAndServeTLS(tlsCert, tlsKey)
 }
 
 //go:embed dist/*

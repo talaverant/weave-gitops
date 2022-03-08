@@ -12,7 +12,11 @@ import (
 	"fmt"
 	"math/big"
 	"net"
+	"net/http"
 	"time"
+
+	"github.com/sirupsen/logrus"
+	"github.com/weaveworks/weave-gitops/cmd/gitops/cmderrors"
 )
 
 // TLSConfig is adapted from http.Server.ServeTLS
@@ -95,4 +99,33 @@ func generateKeyPair(hosts []string) ([]byte, []byte, error) {
 	}
 
 	return certPEMBlock.Bytes(), keyPEMBlock.Bytes(), nil
+}
+
+func ListenAndServe(srv *http.Server, noTLS bool, tlsCert, tlsKey string, log logrus.FieldLogger) error {
+	if noTLS {
+		log.Info("TLS connections disabled")
+		return srv.ListenAndServe()
+	}
+
+	if tlsCert == "" && tlsKey == "" {
+		log.Info("TLS cert and key not specified, generating and using in-memory keys")
+
+		tlsConfig, err := TLSConfig([]string{"localhost", "0.0.0.0", "127.0.0.1"})
+		if err != nil {
+			return fmt.Errorf("failed to generate a TLSConfig: %w", err)
+		}
+
+		srv.TLSConfig = tlsConfig
+		// if TLSCert and TLSKey are both empty (""), ListenAndServeTLS will ignore
+		// and happily use the TLSConfig supplied above
+		return srv.ListenAndServeTLS("", "")
+	}
+
+	if tlsCert == "" || tlsKey == "" {
+		return cmderrors.ErrNoTLSCertOrKey
+	}
+
+	log.Infof("Using TLS from %q and %q", tlsCert, tlsKey)
+
+	return srv.ListenAndServeTLS(tlsCert, tlsKey)
 }

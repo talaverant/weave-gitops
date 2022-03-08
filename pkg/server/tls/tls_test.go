@@ -9,8 +9,10 @@ import (
 	"net/http/httptest"
 	"testing"
 
+	"github.com/sirupsen/logrus"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"github.com/weaveworks/weave-gitops/cmd/gitops/cmderrors"
 	wegotls "github.com/weaveworks/weave-gitops/pkg/server/tls"
 )
 
@@ -87,4 +89,13 @@ func getTestClient(t *testing.T, tlsConfig *tls.Config) (*httptest.Server, http.
 	}
 
 	return ts, client
+}
+
+func TestMissingTLSKeyOrCert(t *testing.T) {
+	log := logrus.New()
+	err := wegotls.ListenAndServe(&http.Server{}, false, "foo", "", log)
+	assert.ErrorIs(t, err, cmderrors.ErrNoTLSCertOrKey)
+
+	err = wegotls.ListenAndServe(&http.Server{}, false, "", "bar", log)
+	assert.ErrorIs(t, err, cmderrors.ErrNoTLSCertOrKey)
 }
