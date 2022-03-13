@@ -23,7 +23,7 @@ LDFLAGS?=-X github.com/weaveworks/weave-gitops/cmd/gitops/version.BuildTime=$(BU
 # just to get, e.g. the commit hash
 DOCKERARGS:=--build-arg FLUX_VERSION=$(FLUX_VERSION) --build-arg LDFLAGS="$(LDFLAGS)" --build-arg GIT_COMMIT=$(GIT_COMMIT)
 # We want to be able to reference this in builds & pushes
-DEFAULT_DOCKER_REPO=localhost:5001
+DEFAULT_DOCKER_REPO=jamweave
 DOCKER_REGISTRY?=$(DEFAULT_DOCKER_REPO)
 DOCKER_IMAGE?=gitops-server
 

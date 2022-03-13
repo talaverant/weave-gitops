@@ -13,15 +13,15 @@ spec:
       serviceAccountName: wego-app-service-account
       containers:
         - name: wego-app
-          image: "{{.Values.containerRegistry}}:{{.Values.image}}"
+          image: {{.Values.containerRegistry}}/{{.Values.image}}
           args: [ "-l", "--helm-repo-namespace","{{.Values.namespace}}" ]
           ports:
             - containerPort: 9001
               protocol: TCP
           imagePullPolicy: IfNotPresent
           env:
-          - name: WEAVE_GITOPS_AUTH_ENABLED
-            value: "true"
+            - name: WEAVE_GITOPS_AUTH_ENABLED
+              value: "true"
   selector:
     matchLabels:
       app: wego-app
@@ -50,17 +50,17 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: wego-app-service-account
-    namespace: {{ .Values.namespace }}
+    namespace: { { .Values.namespace } }
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   name: weave-gitops-role
 rules:
-  - apiGroups: [""]
+  - apiGroups: [ "" ]
     resources: [ "users", "groups", "serviceaccounts" ]
     verbs: [ "impersonate" ]
-  - apiGroups: [""]
+  - apiGroups: [ "" ]
     resources: [ "secrets" ]
     verbs: [ "get", "list" ]
 ---
