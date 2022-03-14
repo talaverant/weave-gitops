@@ -34,9 +34,18 @@ ARG GIT_COMMIT="_unset_"
 # ignore the index.html dependency (which it otherwise would because node_modules is missing)
 RUN LDFLAGS=$LDFLAGS GIT_COMMIT=$GIT_COMMIT make -o cmd/gitops-server/cmd/dist/index.html gitops-server
 
+RUN apt update && apt install -y libnss3-tools
+RUN wget https://github.com/FiloSottile/mkcert/releases/download/v1.4.3/mkcert-v1.4.3-linux-amd64 && \
+	mv mkcert-v1.4.3-linux-amd64 /usr/local/bin/mkcert && \
+	chmod +x /usr/local/bin/mkcert && mkcert --version
+RUN mkcert -install
+RUN mkcert localhost
+
 #  Distroless
 FROM gcr.io/distroless/base as runtime
 COPY --from=go-build /app/bin/gitops-server /gitops-server
 COPY --from=go-build /root/.ssh/known_hosts /root/.ssh/known_hosts
+COPY --from=go-build /app/localhost-key.pem /root/localhost-key.pem
+COPY --from=go-build /app/localhost.pem /root/localhost.pem
 
 ENTRYPOINT ["/gitops-server"]
