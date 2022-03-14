@@ -46,7 +46,7 @@ metadata:
 subjects:
   - kind: User
     name: wego-admin
-    namespace: {{.Values.namespace}}
+    namespace: default
 roleRef:
   kind: Role
   name: wego-admin-user-role
