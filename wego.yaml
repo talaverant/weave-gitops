@@ -30,7 +30,7 @@ spec:
         kind: GitRepository
         name: ww-gitops
   values:
-    image: rc0-dh
+    image: rc1-dh
     # password = dev
     # i think the default admin username is admin
     adminPassword: JDJhJDEwJE1leDY2T3lFbE1VN1VZb1lwL25ReC5ldVlXM09aaHZ5d1hSN2IuLi9PSDJFbDdEcUZlWElt
