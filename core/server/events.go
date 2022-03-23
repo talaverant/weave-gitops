@@ -24,7 +24,7 @@ func (cs *coreServer) ListFluxEvents(ctx context.Context, msg *pb.ListFluxEvents
 	l := &corev1.EventList{}
 
 	fields := client.MatchingFields{
-		"involvedObject.kind":      msg.InvolvedObject.Kind,
+		// "involvedObject.kind":      msg.InvolvedObject.Kind,
 		"involvedObject.name":      msg.InvolvedObject.Name,
 		"involvedObject.namespace": msg.InvolvedObject.Namespace,
 	}

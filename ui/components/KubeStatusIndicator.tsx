@@ -8,10 +8,15 @@ import Text from "./Text";
 
 type Props = {
   className?: string;
-  conditions: Condition[];
+  obj: Statusable;
   short?: boolean;
   suspended?: boolean;
 };
+
+interface Statusable {
+  suspended?: boolean;
+  conditions?: Condition[];
+}
 
 export function computeReady(conditions: Condition[]): boolean {
   const ready =
@@ -23,32 +28,27 @@ export function computeReady(conditions: Condition[]): boolean {
   return ready?.status == "True";
 }
 
-export function computeMessage(conditions: Condition[]) {
+export function computeMessage(obj: Statusable) {
   const readyCondition =
-    _.find(conditions, (c) => c.type === "Ready") ||
-    _.find(conditions, (c) => c.type === "Available");
+    _.find(obj.conditions, (c) => c.type === "Ready") ||
+    _.find(obj.conditions, (c) => c.type === "Available");
 
   return readyCondition ? readyCondition.message : "unknown error";
 }
 
-function KubeStatusIndicator({
-  className,
-  conditions,
-  short,
-  suspended,
-}: Props) {
+function KubeStatusIndicator({ className, obj, short, suspended }: Props) {
   let readyText;
   let icon;
   if (suspended) {
     icon = IconType.SuspendedIcon;
     readyText = "Suspended";
   } else {
-    const ready = computeReady(conditions);
+    const ready = computeReady(obj.conditions);
     readyText = ready ? "Ready" : "Not Ready";
     icon = readyText === "Ready" ? IconType.SuccessIcon : IconType.FailedIcon;
   }
 
-  let text = computeMessage(conditions);
+  let text = computeMessage(obj);
   if (short || suspended) text = readyText;
 
   return (

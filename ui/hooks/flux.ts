@@ -23,7 +23,7 @@ export function useGetReconciledObjects(
   kinds: GroupVersionKind[]
 ) {
   const { api } = useContext(AppContext);
-  const [data, setRes] = useState([]);
+  const [data, setRes] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {

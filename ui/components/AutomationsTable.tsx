@@ -88,20 +88,14 @@ function AutomationsTable({ className, automations, hideSource }: Props) {
     {
       label: "Status",
       value: (a: Automation) =>
-        a.conditions.length > 0 ? (
-          <KubeStatusIndicator
-            short
-            conditions={a.conditions}
-            suspended={a.suspended}
-          />
-        ) : null,
+        a.conditions.length > 0 ? <KubeStatusIndicator short obj={a} /> : null,
       sortType: SortType.bool,
       sortValue: ({ conditions }) => computeReady(conditions),
       width: 64,
     },
     {
       label: "Message",
-      value: (a: Automation) => computeMessage(a.conditions),
+      value: (a: Automation) => computeMessage(a),
       width: 360,
       sortValue: ({ conditions }) => computeMessage(conditions),
     },
@@ -113,7 +107,7 @@ function AutomationsTable({ className, automations, hideSource }: Props) {
     { label: "Last Updated", value: "lastHandledReconciledAt", width: 120 },
   ];
 
-  if (hideSource) fields = _.filter(fields, { label: "Source" });
+  if (hideSource) fields = _.filter(fields, (f) => f.label !== "Source");
 
   return (
     <div className={className}>
