@@ -370,8 +370,17 @@ func (s *AuthServer) UserInfo() http.HandlerFunc {
 			return
 		}
 
+		var tokenClaims struct {
+			Groups []string `json:"groups"`
+		}
+		if err := info.Claims(&tokenClaims); err != nil {
+			http.Error(rw, fmt.Sprintf("parsing claims from the JWT token: %v", err), http.StatusUnauthorized)
+			return
+		}
+
 		ui := UserInfo{
-			Email: info.Email,
+			Email:  info.Email,
+			Groups: tokenClaims.Groups,
 		}
 
 		toJson(rw, ui, s.Log)

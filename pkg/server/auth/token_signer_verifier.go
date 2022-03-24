@@ -10,8 +10,11 @@ import (
 	"github.com/weaveworks/weave-gitops/api/v1alpha1"
 )
 
+// AdminClaims is the set of claims that we request from the upstream OIDC
+// provider.
 type AdminClaims struct {
 	jwt.StandardClaims
+	Groups []string `json:"groups"`
 }
 
 type TokenSigner interface {
@@ -65,7 +68,7 @@ func (sv *HMACTokenSignerVerifier) Verify(tokenString string) (*AdminClaims, err
 	token, err := jwt.ParseWithClaims(tokenString, &AdminClaims{},
 		func(token *jwt.Token) (interface{}, error) {
 			if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
-				return nil, fmt.Errorf("Unexpected signing method: %v", token.Header["alg"])
+				return nil, fmt.Errorf("unexpected signing method: %v", token.Header["alg"])
 			}
 
 			return sv.hmacSecret, nil

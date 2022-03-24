@@ -557,7 +557,9 @@ func TestUserInfoOIDCFlow(t *testing.T) {
 	var info auth.UserInfo
 
 	g.Expect(json.NewDecoder(resp.Body).Decode(&info)).To(Succeed())
+	// These come from the DefaultUser provided by mockoidc
 	g.Expect(info.Email).To(Equal("jane.doe@example.com"))
+	g.Expect(info.Groups).To(Equal([]string{"engineering", "design"}))
 }
 
 func TestLogoutSuccess(t *testing.T) {
