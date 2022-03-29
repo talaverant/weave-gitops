@@ -11,7 +11,7 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "v0.6.2"
 
-imagePullSecrets: []
+imagePullSecrets: [ ]
 nameOverride: ""
 fullnameOverride: ""
 
@@ -28,7 +28,7 @@ serviceAccount:
   # Specifies whether a service account should be created
   create: true
   # Annotations to add to the service account
-  annotations: {}
+  annotations: { }
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
   name: ""
@@ -38,18 +38,20 @@ rbac:
   create: true
   # List of resources that the service account can impersonate. It is strongly
   # recommended that you configure groups that can be used to populate this.
-  impersonationResourceNames: []
+  impersonationResourceNames: [ ]
   # Limit the type of principal that can be impersonated
   impersonationResources: [ "users", "groups" ]
   # Specify whether additional permissions should be granted to the service account
   # in order to work with weave-gitops enterprise
-  viewSecrets: []
+  viewSecrets: [ ]
 
 # This should not be used in production
 adminUser:
   # Whether the wego-admin user should be created.
   # If you use this make sure you add it to rbac.impersonationResourceNames.
   create: false
+  # Use a different role with your admin user to control access.
+  role: wego-admin-role
   # Set the username and password, these will be stored in a secret in k8s.
   username: gitops-test-user
   # The password will be hashed using the bcrypt algorithm.
@@ -57,18 +59,18 @@ adminUser:
   # --set adminUser.password="My $uper secure password that is not this $tring"
   # password:
 
-podAnnotations: {}
+podAnnotations: { }
 
-podSecurityContext: {}
-  # fsGroup: 2000
+podSecurityContext: { }
+# fsGroup: 2000
 
-securityContext: {}
+securityContext: { }
   # capabilities:
   #   drop:
   #   - ALL
   # readOnlyRootFilesystem: true
   # runAsNonRoot: true
-  # runAsUser: 1000
+# runAsUser: 1000
 
 service:
   create: true
@@ -78,20 +80,20 @@ service:
 ingress:
   enabled: false
   className: ""
-  annotations: {}
+  annotations: { }
     # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
+  # kubernetes.io/tls-acme: "true"
   hosts:
     - host: chart-example.local
       paths:
         - path: /
           pathType: ImplementationSpecific
-  tls: []
+  tls: [ ]
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
 
-resources: {}
+resources: { }
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
@@ -101,10 +103,10 @@ resources: {}
   #   memory: 128Mi
   # requests:
   #   cpu: 100m
-  #   memory: 128Mi
+#   memory: 128Mi
 
-nodeSelector: {}
+nodeSelector: { }
 
-tolerations: []
+tolerations: [ ]
 
-affinity: {}
+affinity: { }
