@@ -1,0 +1,79 @@
+name: trigger-release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version (e.g. 'v1.2.3-rc.4')"
+        required: true
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: weaveworks/wego-app
+
+jobs:
+  release-tasks:
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.17.5
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.13.2
+      - name: Create GitOps binary
+        run: |
+          make all
+      - name: Set up environment vars
+        run: |
+          echo "BRANCH=release-updates-$$" >> $GITHUB_ENV
+          GITOPS_VERSION=$(echo ${{ github.event.inputs.version }} | tr -d v)
+          echo "GITOPS_VERSION=$GITOPS_VERSION" >> $GITHUB_ENV
+
+      - name: Update node version
+        run: |
+          apt install jq
+          jq '.version = "'$GITOPS_VERSION'"' < package.json > package-new.json
+          mv package-new.json package.json
+          npm ci
+          git commit -am "Update js lib version"
+
+      - name: Update docs version
+        env:
+          ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+          GA_KEY: ${{ secrets.GA_KEY }}
+        run: |
+          bash tools/update-docs.sh ${PWD}/bin/gitops ${PWD}/website
+          git commit -am "Update docs"
+
+      - name: Update README
+        run: |
+          sed -i 's#\(weave-gitops/releases/download/\)[^/]\+\(/gitops-\)#\1${{ github.event.inputs.version }}\2#' README.md
+          git commit -am "Update README release version"
+
+
+      - name: Update Chart
+        run: |
+          # Increment the micro chart version
+          NEW_CHART_VERSION=$(yq e '.version' -i charts/gitops-server/Chart.yaml | awk -F. -v OFS=. '{ $3++; print }')
+          yq e '.appVersion = "${{ github.events.inputs.version }}"' -i charts/gitops-server/Chart.yaml
+          yq e '.version = "'$NEW_CHART_VERSION'"' -i charts/gitops-server/Chart.yaml
+          yq e '.image.tag = "${{ github.events.inputs.version }}"' -i charts/gitops-server/values.yaml
+
+          git commit -am "Update Chart release version"
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@9825ae65b1cb54b543b938503728b432a0176d29 # v3
+        with:
+          token: ${{ secrets.GITOPS_TOKEN }}
+          committer: GitHub <noreply@github.com>
+          author: weave-test-user <weave-test-user@example.com>
+          signoff: true
+          committer: GitHub <noreply@github.com>
+          branch: ${{ env.BRANCH }}
+          base: main
+          title: "Updates for ${{ env.GITOPS_VERSION }}"
+          body: "Update version references to ${{ env.GITOPS_VERSION }}"

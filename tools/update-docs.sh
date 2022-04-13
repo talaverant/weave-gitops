@@ -33,5 +33,4 @@ ${WEAVE_GITOPS_BINARY} docs
 git add *.md
 # create versioned docs
 cd $WEAVE_GITOPS_DOC_REPO
-version_number=$(cut -f2 -d'v' <<< $GITOPS_VERSION)
 npm run docusaurus docs:version $version_number
