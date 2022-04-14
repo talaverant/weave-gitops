@@ -15,6 +15,7 @@ func TestMain(m *testing.M) {
 	var err error
 	k8sEnv, err = testutils.StartK8sTestEnvironment([]string{
 		"../../tools/testcrds",
+		"../../../cluster-controller/config/crd/bases",
 	})
 
 	if err != nil {

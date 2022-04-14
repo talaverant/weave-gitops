@@ -100,6 +100,7 @@ func (n *namespaceStore) update(ctx context.Context) {
 	}
 
 	if n.clusterChan != nil {
+		// TODO change to select
 		for cluster := range n.clusterChan {
 			if err := clientsPool.Add(clientConfig(n.restCfg), cluster); err != nil {
 				n.logger.Error(err, "unable to create client for cluster", "cluster", cluster.Name)

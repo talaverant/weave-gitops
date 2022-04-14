@@ -19,6 +19,7 @@ import (
 	kustomizev2 "github.com/fluxcd/kustomize-controller/api/v1beta2"
 	sourcev1 "github.com/fluxcd/source-controller/api/v1beta1"
 	"github.com/pkg/errors"
+	gitopsv1alpha1 "github.com/weaveworks/cluster-controller/api/v1alpha1"
 	appsv1 "k8s.io/api/apps/v1"
 	corev1 "k8s.io/api/core/v1"
 	rbacv1 "k8s.io/api/rbac/v1"
@@ -42,6 +43,7 @@ func CreateScheme() *apiruntime.Scheme {
 	_ = extensionsv1.AddToScheme(scheme)
 	_ = appsv1.AddToScheme(scheme)
 	_ = rbacv1.AddToScheme(scheme)
+	_ = gitopsv1alpha1.AddToScheme(scheme)
 
 	return scheme
 }

@@ -41,6 +41,7 @@ require (
 	github.com/spf13/viper v1.10.0
 	github.com/stretchr/testify v1.7.1
 	github.com/tomwright/dasel v1.22.1
+	github.com/weaveworks/cluster-controller v0.0.0-20220412121721-313761dc9997
 	github.com/weaveworks/go-checkpoint v0.0.0-20170503165305-ebbb8b0518ab
 	go.uber.org/zap v1.21.0
 	golang.org/x/crypto v0.0.0-20211215153901-e495a2d5b3d3

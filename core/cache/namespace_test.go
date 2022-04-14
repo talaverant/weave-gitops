@@ -21,7 +21,6 @@ func TestContainer_Namespace(t *testing.T) {
 	cacheContainer := cache.NewContainer(log, opts)
 
 	cacheContainer.Start(ctx)
-
 	defer cacheContainer.Stop()
 
 	g.Expect(cacheContainer.ForceRefresh(cache.NamespaceStorage)).To(Succeed())
@@ -76,11 +75,9 @@ func TestContainer_NamespaceWithClusterSync(t *testing.T) {
 	g.Expect(nsList).To(HaveLen(3))
 }
 
-func newNamespace(ctx context.Context, prefix string, g *GomegaWithT) *v1.Namespace {
+func newNamespace(ctx context.Context, prefix string, g *GomegaWithT) {
 	ns := &v1.Namespace{}
 	ns.Name = prefix + "kube-test-" + rand.String(5)
 
 	g.Expect(k8sEnv.Client.Create(ctx, ns)).To(Succeed())
-
-	return ns
 }
