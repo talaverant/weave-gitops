@@ -92,6 +92,7 @@ function KustomizationDetail({ kustomization, className }: Props) {
               automationName={kustomization?.name}
               kinds={kustomization?.inventory}
               clusterName={kustomization?.clusterName}
+              // namespace={kustomization?.namespace}
             />
           </RouterTab>
           <RouterTab name="Events" path={`${path}/events`}>

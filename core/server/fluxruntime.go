@@ -46,7 +46,12 @@ func (cs *coreServer) ListFluxRuntimeObjects(ctx context.Context, msg *pb.ListFl
 }
 
 func (cs *coreServer) GetReconciledObjects(ctx context.Context, msg *pb.GetReconciledObjectsRequest) (*pb.GetReconciledObjectsResponse, error) {
-	clustersClient := clustersmngr.ClientFromCtx(ctx)
+	mgr := clustersmngr.ClientFromCtx(ctx)
+
+	c, err := mgr.Scoped(msg.ClusterName)
+	if err != nil {
+		return nil, ErrClusterNotFound
+	}
 
 	var opts client.MatchingLabels
 
@@ -65,6 +70,20 @@ func (cs *coreServer) GetReconciledObjects(ctx context.Context, msg *pb.GetRecon
 		return nil, fmt.Errorf("unsupported application kind: %s", msg.AutomationKind.String())
 	}
 
+	nsList := []string{}
+	if msg.Namespace != "" {
+		nsList = append(nsList, msg.Namespace)
+	} else {
+		namespaces, err := cs.namespacesForCluster(ctx, mgr, msg.ClusterName)
+		if err != nil {
+			return nil, fmt.Errorf("listing namespaces for cluster %q: %w", msg.ClusterName, err)
+		}
+
+		for _, ns := range namespaces {
+			nsList = append(nsList, ns.Name)
+		}
+	}
+
 	result := []unstructured.Unstructured{}
 
 	for _, gvk := range msg.Kinds {
@@ -76,18 +95,23 @@ func (cs *coreServer) GetReconciledObjects(ctx context.Context, msg *pb.GetRecon
 			Version: gvk.Version,
 		})
 
-		if err := clustersClient.List(ctx, msg.ClusterName, &l, opts, client.InNamespace(msg.Namespace)); err != nil {
-			if k8serrors.IsForbidden(err) {
-				// Our service account (or impersonated user) may not have the ability to see the resource in question,
-				// in the given namespace.
-				// We pretend it doesn't exist and keep looping.
-				continue
+		for _, ns := range nsList {
+			cs.logger.Info("ns/kind", "namespace", ns, "kind", l.GetKind())
+			if err := c.List(ctx, &l, opts, client.InNamespace(ns)); err != nil {
+
+				if k8serrors.IsForbidden(err) {
+					cs.logger.Info("namespace is forbidden", "namespace", ns, "kind", l.GetKind())
+					// Our service account (or impersonated user) may not have the ability to see the resource in question,
+					// in the given namespace.
+					// We pretend it doesn't exist and keep looping.
+					continue
+				}
+
+				return nil, fmt.Errorf("listing unstructured object: %w", err)
 			}
 
-			return nil, fmt.Errorf("listing unstructured object: %w", err)
+			result = append(result, l.Items...)
 		}
-
-		result = append(result, l.Items...)
 	}
 
 	objects := []*pb.UnstructuredObject{}

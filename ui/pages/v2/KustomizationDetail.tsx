@@ -9,6 +9,7 @@ type Props = {
   namespace?: string;
   clusterName: string;
   className?: string;
+  namespace: string;
 };
 
 function KustomizationDetail({

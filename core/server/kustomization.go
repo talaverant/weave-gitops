@@ -2,6 +2,7 @@ package server
 
 import (
 	"context"
+	"errors"
 	"fmt"
 
 	kustomizev1 "github.com/fluxcd/kustomize-controller/api/v1beta2"
@@ -11,10 +12,12 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 )
 
+var ErrClusterNotFound = errors.New("default cluster not found")
+
 type defaultClusterNotFound struct{}
 
 func (e defaultClusterNotFound) Error() string {
-	return "default cluster not found"
+	return ErrClusterNotFound.Error()
 }
 
 func (cs *coreServer) ListKustomizations(ctx context.Context, msg *pb.ListKustomizationsRequest) (*pb.ListKustomizationsResponse, error) {

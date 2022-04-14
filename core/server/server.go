@@ -119,3 +119,27 @@ func (cs *coreServer) namespaces() (map[string][]v1.Namespace, error) {
 
 	return namespaces, nil
 }
+
+func (cs *coreServer) namespacesForCluster(ctx context.Context, c clustersmngr.Client, cluster string) ([]v1.Namespace, error) {
+	namespaces, err := cs.namespaces()
+	if err != nil {
+		return nil, err
+	}
+
+	list, ok := namespaces[cluster]
+	if !ok {
+		return nil, ErrClusterNotFound
+	}
+
+	cfg, err := c.RestConfig(cluster)
+	if err != nil {
+		return nil, err
+	}
+
+	available, err := cs.nsChecker.FilterAccessibleNamespaces(ctx, cfg, list)
+	if err != nil {
+		return nil, err
+	}
+
+	return available, nil
+}
