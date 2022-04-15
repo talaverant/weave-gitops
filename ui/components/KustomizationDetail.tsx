@@ -19,7 +19,6 @@ import SyncButton from "./SyncButton";
 import Timestamp from "./Timestamp";
 
 type Props = {
-  name: string;
   kustomization?: Kustomization;
   className?: string;
 };
@@ -34,7 +33,7 @@ const TabContent = styled(Flex)`
   height: 100%;
 `;
 
-function KustomizationDetail({ kustomization, name, className }: Props) {
+function KustomizationDetail({ kustomization, className }: Props) {
   const { notifySuccess } = React.useContext(AppContext);
   const { path } = useRouteMatch();
 
@@ -99,7 +98,7 @@ function KustomizationDetail({ kustomization, name, className }: Props) {
             <EventsTable
               involvedObject={{
                 kind: "Kustomization",
-                name,
+                name: kustomization?.name,
                 namespace: kustomization?.namespace,
               }}
             />
